@@ -15,6 +15,8 @@ function output_img = canny_detector(ct_image, output_filename)
 gray_img = im2gray(ct_image);
 
 % Determine the optimal thresholds for the Canny edge detector using the Otsu method
+% https://ieeexplore.ieee.org/abstract/document/6642801
+% https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5476095
 [~, threshold] = edge(gray_img, 'Canny');
 fudgeFactor = 1;
 lowerThreshold = threshold(1) * fudgeFactor;
